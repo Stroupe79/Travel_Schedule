@@ -6,16 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Travel Schedule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./assests/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-functions.js"></script>
     <script src="./assests/travel.js"></script>
+
 </head>
 
 <body>
-    <h1>Travel Schedule</h1>
+
+    <div class="container">
+    <h1 id="header" class="text-center mt-5">Travel Schedule</h1>
+    <div class="m-5"></div>
+
+    <div class="row">
+    <table class="table">
+    <tr id="colNames">
+        <td>Name</td>
+        <td>Destination</td>
+        <td>First Vessel Time</td>
+        <td>Frequency</td>
+    </tr>
+</table>
+</div>
+
+
+
+
+</div>
 </body>
 
 </html>
