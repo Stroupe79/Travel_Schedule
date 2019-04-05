@@ -27,6 +27,8 @@
 
 <body>
 
+    <!-- Transport Table -->
+
     <div class="container">
     <h1 id="header" class="text-center mt-5">Travel Schedule</h1>
     <div class="m-5"></div>
@@ -37,23 +39,60 @@
     <tr id="colNames">
         <td>Name</td>
         <td>Destination</td>
-        <td>First Vessel Time</td>
-        <td>Frequency</td>
+        <td>First Depature Time</td>
+        <td>Departure Frequency</td>
     </tr>
 </thead>
     <tr>
             <td  id="data"><img src="assests/icons/airship32.png" > - Airship</td>
             <td  id="data">Berlin</td>
-            <td  id="data">1400</td>
+            <td  id="data">14:00</td>
             <td  id="data">2hr</td>
         </tr>
+        <tr id="newData"></tr>
 </table>
 </div>
 
 
 
+<!-- Adding new Transport Info -->
+<div class="container">
+<div id="transportDropdown">
+    <div class="row">
+        <p class="col-md-3">Transportation Type</p>
+        <p class="col-md-3">Destination</p>
+        <p class="col-md-3">First Depature</p>
+        <p class="col-md-3">Depature Frequency</p>
+    </div>
+   
+    <div class="row">
+    <form class="col-md-3">
+    <select class="mr-2" id="mode">
+        <option value="Airplane">Airplane</option>
+        <option value="Airship">Airship</option>
+        <option value="Bus">Bus</option>
+        <option value="Helicopter">Helicopter</option>
+        <option value="Ship">Ship</option>
+        <option value="Sub">Submarine</option>
+        <input type="text" class="col-md-6" id="name" placeholder="Name">
+    </select>
+</form>
+    <input type="text" class="col-md-3" id="dest" placeholder="Where we headed?">
+    <input type="text" class="col-md-3" id="firstDep" placeholder="Military Time - 24:00">
+    <input type="text" class="col-md-3" id="freqDep" placeholder="Hr/Min">
+</div>
+<div class="row">
+    <button type="button" id="submit" class="btn btn-danger mt-5" type="submit">Submit New</button>
+</div>
+</div>
 
 </div>
+
+</div>
+
+
+
+
 </body>
 
 </html>
