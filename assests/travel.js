@@ -10,8 +10,3 @@
 };
 firebase.initializeApp(config);
 
-$.LoadingOverlaySetup({
-    background : "rgba(243, 245, 259, .75)",
-    imageColor : "#3880ff"
-  });
-  
