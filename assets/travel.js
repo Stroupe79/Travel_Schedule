@@ -51,16 +51,15 @@ var newRow = $("<tr>").append(
 $("#newData").append(newRow);
 
 
-// data.dest
-// data.time
-// data.frequency
-
-//     $("#newData").html("<tr><td id='data'>" + data.mode + "</td><td id='data'>" + data.dest + "</td><td id='data'>" + data.time + "</td><td id='data'>" + data.frequency + "</td></tr>");
 }
 
 function drawRows(){
     tableAdd(dbAdd);
 
 }
+
+function timeMath(){
+
+};
 
 });
