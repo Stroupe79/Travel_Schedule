@@ -23,9 +23,11 @@ $("#submit").on("click", function(event) {
     var dropdown = $("option:selected").val();
     var dest = $("#dest").val();
     var depart = $("#firstDep").val();
-    var freq = $("#freqDep").val()
+    var freq = $("#freqDep").val();
+    var name = $("#name").val();
     
     let dbAdd = {
+        name: name,
         mode: dropdown,
         dest: dest,
         time: depart,
@@ -39,7 +41,7 @@ $("#submit").on("click", function(event) {
 function tableAdd(data){
     console.log(data)
 var newRow = $("<tr>").append(
-    $("<td id='data'>").html("<img src='./assets/icons/" + data.mode + ".png'/> - " + data.mode),
+    $("<td id='data'>").html("<img src='./assets/icons/" + data.mode + ".png'/> - " + data.name),
     $("<td id='data'>").text(data.dest),
     $("<td id='data'>").text(data.time),
     $("<td id='data'>").text(data.frequency),
