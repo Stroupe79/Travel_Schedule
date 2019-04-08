@@ -7,8 +7,8 @@
     <title>Travel Schedule</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assests/style.css">
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
@@ -21,7 +21,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-functions.js"></script>
-    <script src="./assests/travel.js"></script>
+    <script src="./assets/travel.js"></script>
 
 </head>
 
@@ -30,65 +30,69 @@
     <!-- Transport Table -->
 
     <div class="container">
-    <h1 id="header" class="text-center mt-5">Travel Schedule</h1>
-    <div class="m-5"></div>
+        <h1 id="header" class="text-center mt-5">Travel Schedule</h1>
+        <div class="m-5"></div>
 
-    <div class="row">
-    <table class="table text-center">
-        <thead>
-    <tr id="colNames">
-        <td>Name</td>
-        <td>Destination</td>
-        <td>First Depature Time</td>
-        <td>Departure Frequency</td>
-    </tr>
-</thead>
-    <tr>
-            <td  id="data"><img src="assests/icons/airship32.png" > - Airship</td>
-            <td  id="data">Berlin</td>
-            <td  id="data">14:00</td>
-            <td  id="data">2hr</td>
-        </tr>
-        <tr id="newData"></tr>
-</table>
-</div>
+        <div class="row">
+            <table class="table text-center" id="newData">
+                <thead>
+                    <tr id="colNames">
+                        <td>Name</td>
+                        <td>Destination</td>
+                        <td>First Arrival Time</td>
+                        <td>Arrival Frequency</td>
+                        <td>Next Arrival</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="data"><img src="assets/icons/Airship.png"> - Airship</td>
+                    <td id="data">Berlin</td>
+                    <td id="data">14:00</td>
+                    <td id="data">2hr</td>
+                    <td id="data">16:00</td>
+                </tr>
+                <!-- <tr id="newData"></tr> -->
+            </tbody>
+            </table>
+        </div>
 
 
 
-<!-- Adding new Transport Info -->
-<div class="container">
-<div id="transportDropdown">
-    <div class="row">
-        <p class="col-md-3">Transportation Type</p>
-        <p class="col-md-3">Destination</p>
-        <p class="col-md-3">First Depature</p>
-        <p class="col-md-3">Depature Frequency</p>
+        <!-- Adding new Transport Info -->
+        <div class="container">
+            <div id="transportDropdown">
+                <div class="row">
+                    <p class="col-md-3">Transportation Type</p>
+                    <p class="col-md-3">Destination</p>
+                    <p class="col-md-3">First Arrival</p>
+                    <p class="col-md-3">Arrival Frequency</p>
+                </div>
+
+                <div class="row">
+                    <form class="col-md-3">
+                        <select class="mr-2" id="mode">
+                            <option value="Airplane">Airplane</option>
+                            <option value="Airship">Airship</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Helicopter">Helicopter</option>
+                            <option value="Ship">Ship</option>
+                            <option value="Sub">Submarine</option>
+                            <input type="text" class="col-md-6" id="name" placeholder="Name">
+                        </select>
+                    </form>
+                    <input type="text" class="col-md-3" id="dest" placeholder="Where we headed?">
+                    <input type="text" class="col-md-3" id="firstDep" placeholder="Military Time - 24:00">
+                    <input type="text" class="col-md-3" id="freqDep" placeholder="Hr/Min">
+                </div>
+                <div class="row">
+                    <button type="button" id="submit" class="btn btn-danger mt-5" type="submit">Submit New</button>
+                </div>
+            </div>
+
+        </div>
+
     </div>
-   
-    <div class="row">
-    <form class="col-md-3">
-    <select class="mr-2" id="mode">
-        <option value="Airplane">Airplane</option>
-        <option value="Airship">Airship</option>
-        <option value="Bus">Bus</option>
-        <option value="Helicopter">Helicopter</option>
-        <option value="Ship">Ship</option>
-        <option value="Sub">Submarine</option>
-        <input type="text" class="col-md-6" id="name" placeholder="Name">
-    </select>
-</form>
-    <input type="text" class="col-md-3" id="dest" placeholder="Where we headed?">
-    <input type="text" class="col-md-3" id="firstDep" placeholder="Military Time - 24:00">
-    <input type="text" class="col-md-3" id="freqDep" placeholder="Hr/Min">
-</div>
-<div class="row">
-    <button type="button" id="submit" class="btn btn-danger mt-5" type="submit">Submit New</button>
-</div>
-</div>
-
-</div>
-
-</div>
 
 
 

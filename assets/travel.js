@@ -38,8 +38,27 @@ $("#submit").on("click", function(event) {
 
 function tableAdd(data){
     console.log(data)
+var newRow = $("<tr>").append(
+    $("<td id='data'>").html("<img src='./assets/icons/" + data.mode + ".png'/> - " + data.mode),
+    $("<td id='data'>").text(data.dest),
+    $("<td id='data'>").text(data.time),
+    $("<td id='data'>").text(data.frequency),
+    $("<td id='data'>").text(data.arrival),
+);
 
-    $("#newData").html("<tr><td id='data'>" + data.mode + "</td><td id='data'>" + data.dest + "</td><td id='data'>" + data.time + "</td><td id='data'>" + data.frequency + "</td></tr>");
+$("#newData").append(newRow);
+
+
+// data.dest
+// data.time
+// data.frequency
+
+//     $("#newData").html("<tr><td id='data'>" + data.mode + "</td><td id='data'>" + data.dest + "</td><td id='data'>" + data.time + "</td><td id='data'>" + data.frequency + "</td></tr>");
+}
+
+function drawRows(){
+    tableAdd(dbAdd);
+
 }
 
 });
