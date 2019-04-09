@@ -49,7 +49,7 @@ var newRow = $("<tr>").append(
 );
 
 $("#newData").append(newRow);
-
+timeMath();
 
 }
 
@@ -59,7 +59,9 @@ function drawRows(){
 }
 
 function timeMath(){
-
+ var now = moment();
+ arrival = now._d + freq;
+ console.log(arrival);
 };
 
 });
