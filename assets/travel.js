@@ -50,18 +50,19 @@ var newRow = $("<tr>").append(
 
 $("#newData").append(newRow);
 timeMath();
-
+clearFields();
 }
 
-function drawRows(){
-    tableAdd(dbAdd);
-
-}
 
 function timeMath(){
  var now = moment();
- arrival = now._d + freq;
- console.log(arrival);
+ arrival = moment(now._d).add($("#freqDep").val(), 'hours');
+ console.log(now._d);
+ console.log(arrival._d);
 };
+
+function clearFields(){
+    $("#dest").attr("val", "");
+}
 
 });
