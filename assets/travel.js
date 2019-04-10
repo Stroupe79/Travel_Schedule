@@ -16,7 +16,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-const transport = ["Airship", "Bus", "Airplane", "Helicopter", "Submarine", "Ship"]
 
 $("#submit").on("click", function(event) {
     event.preventDefault();
@@ -25,12 +24,13 @@ $("#submit").on("click", function(event) {
     var depart = $("#firstDep").val();
     var freq = $("#freqDep").val();
     var name = $("#name").val();
+    var time = moment(depart).format("HH:mm")
     
     let dbAdd = {
         name: name,
         mode: dropdown,
         dest: dest,
-        time: depart,
+        time: time,
         frequency: freq,
     }
 
@@ -40,16 +40,17 @@ $("#submit").on("click", function(event) {
 
 function tableAdd(data){
     console.log(data)
+    let newArrive = timeMath();
 var newRow = $("<tr>").append(
     $("<td id='data'>").html("<img src='./assets/icons/" + data.mode + ".png'/> - " + data.name),
     $("<td id='data'>").text(data.dest),
     $("<td id='data'>").text(data.time),
     $("<td id='data'>").text(data.frequency),
-    $("<td id='data'>").text(data.arrival),
+    $("<td id='data'>").text(newArrive),
 );
 
+
 $("#newData").append(newRow);
-timeMath();
 clearFields();
 }
 
@@ -57,8 +58,11 @@ clearFields();
 function timeMath(){
  var now = moment();
  arrival = moment(now._d).add($("#freqDep").val(), 'hours');
+ let newArr = moment(arrival).format("HH:mm");
  console.log(now._d);
  console.log(arrival._d);
+ console.log(newArr)
+ return newArr;
 };
 
 function clearFields(){
