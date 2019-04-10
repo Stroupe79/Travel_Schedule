@@ -4,7 +4,7 @@
  $(document).ready(function (){
 
 
- var config = {
+ const config = {
     apiKey: "AIzaSyDBdToZozb2IWnhgukxR-HbYONqRhfz0gc",
     authDomain: "transportation-schedule-60bd4.firebaseapp.com",
     databaseURL: "https://transportation-schedule-60bd4.firebaseio.com",
@@ -14,17 +14,17 @@
 };
 firebase.initializeApp(config);
 
-var database = firebase.database();
+const database = firebase.database();
 
 
 $("#submit").on("click", function(event) {
     event.preventDefault();
-    var dropdown = $("option:selected").val();
-    var dest = $("#dest").val();
-    var depart = $("#firstDep").val();
-    var freq = $("#freqDep").val();
-    var name = $("#name").val();
-    var time = moment(depart).format("HH:mm")
+    let dropdown = $("option:selected").val();
+    let dest = $("#dest").val();
+    let depart = $("#firstDep").val();
+    let freq = $("#freqDep").val();
+    let name = $("#name").val();
+    let time = moment(depart).format("HH:mm")
     
     let dbAdd = {
         name: name,
